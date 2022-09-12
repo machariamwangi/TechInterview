@@ -57,6 +57,19 @@ namespace Exercise01
                 return $"{ConvertToWords(value / divider)} {tensPower[0]} {GenerateEndPart(value, divider)}";
             }
 
+            // Thousand
+            if (value < 1_000_000)
+            {
+                int divider = 1_000;
+                return $"{ConvertToWords(value / divider)} {tensPower[1]} {GenerateEndPart(value, divider)}";
+            }
+
+            // Million
+            if (value < 1_000_000_000)
+            {
+                int divider = 1_000_000;
+                return $"{ConvertToWords(value / divider)} {tensPower[2]} {GenerateEndPart(value, divider)}";
+            }
 
             return null;
 
