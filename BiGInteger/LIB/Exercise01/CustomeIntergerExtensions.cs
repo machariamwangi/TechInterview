@@ -33,8 +33,33 @@ namespace Exercise01
             string[] tensPower = new string[] {
                 "hundred", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion"
             };
+
+            if (value < 0)
+            {
+                value *= -1;
+            }
+
+            if (value < 20)
+            {
+                return uniqueDigits[(int)value];
+            }
+
+            if (value < 100)
+            {
+                int modulus = (int)value % 10;
+                return $"{tensMultiple[(int)value / 10]} {(modulus == 0 ? "" : uniqueDigits[modulus])}";
+            }
+
+            // Hundred
+            if (value < 1000)
+            {
+                int divider = 100;
+                return $"{ConvertToWords(value / divider)} {tensPower[0]} {GenerateEndPart(value, divider)}";
+            }
+
+
             return null;
-        
+
         }
 
     }
