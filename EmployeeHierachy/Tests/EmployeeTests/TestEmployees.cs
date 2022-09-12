@@ -1,3 +1,5 @@
+using EmployeeHierachy;
+
 namespace EmployeeTests
 {
     [TestClass]
