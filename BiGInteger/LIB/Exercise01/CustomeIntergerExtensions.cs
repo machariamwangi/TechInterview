@@ -2,7 +2,7 @@
 
 namespace Exercise01
 {
-    public class CustomeIntergerExtensions
+    public static class CustomeIntergerExtensions
     {
         //The Referece of this solution is from // https://docs.microsoft.com/en-us/dotnet/api/system.numerics.biginteger?view=net-6.0
         
@@ -116,6 +116,17 @@ namespace Exercise01
             //Return any Number bigger than 91389681247993671255432112000000 is not supported
             return $"{value} is not supported";
 
+        }
+
+        //This function will be called on passes a bIg Interger i,e long, Ints 32-int64
+        public static string ToWords(this BigInteger bigInteger)
+        {
+            return ConvertToWords(bigInteger);
+        }
+        //This function will be called if one passes an Interger int 32
+        public static string ToWords(this int integer)
+        {
+            return ConvertToWords(integer);
         }
 
     }
